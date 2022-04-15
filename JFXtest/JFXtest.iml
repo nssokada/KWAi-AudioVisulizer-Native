@@ -9,5 +9,52 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Processing" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/Calm.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/Calmer.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/controlP5.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/core.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/creativity.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/gluegen-rt.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/happyMat.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/jl1.0.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/jogl-all.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/jsminim.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/minim.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/mp3spi1.9.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/my_audio_visualizer.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/mysql-connector-java-8.0.28.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/mysql-socket-factory-connector-j-8-1.4.4-jar-with-dependencies.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/Relax.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/sleep.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/sound.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/tritonus_aos.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/tritonus_share.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <NATIVE>
+          <root url="file://$MODULE_DIR$/libs" />
+          <root url="file://$MODULE_DIR$/libs" />
+          <root url="file://$MODULE_DIR$/libs" />
+          <root url="file://$MODULE_DIR$/libs" />
+          <root url="file://$MODULE_DIR$/libs" />
+          <root url="file://$MODULE_DIR$/libs" />
+        </NATIVE>
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/libs/jl1.0.1.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/Happier.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
