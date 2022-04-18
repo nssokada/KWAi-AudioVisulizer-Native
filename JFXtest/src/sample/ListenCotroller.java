@@ -29,6 +29,7 @@ public class ListenCotroller {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -38,6 +39,7 @@ public class ListenCotroller {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -48,6 +50,7 @@ public class ListenCotroller {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -63,16 +66,16 @@ public class ListenCotroller {
 
     @FXML
     void sleep(ActionEvent event) throws IOException {
-        PApplet.main("sleep");
+        PApplet.main("Sleepy");
     }
 
     @FXML
     void relax(ActionEvent event) throws IOException {
-        PApplet.main("Relax");
+        PApplet.main("Relaxed");
     }
 
     @FXML
     void happy(ActionEvent event) throws IOException {
-        PApplet.main("happyMat");
+        PApplet.main("Happier");
     }
 }

@@ -25,16 +25,6 @@ import java.io.IOException;
 
 public class Happier extends PApplet {
 
-
-
-
-
-
-
-
-
-
-
 //Global variables: 
 Minim minim;
 AudioPlayer audio;
