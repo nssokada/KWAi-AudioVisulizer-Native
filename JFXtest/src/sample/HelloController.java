@@ -41,6 +41,7 @@ public class HelloController {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -50,6 +51,7 @@ public class HelloController {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -59,6 +61,7 @@ public class HelloController {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -71,6 +74,7 @@ public class HelloController {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         }
         catch (IOException e) {
@@ -80,7 +84,7 @@ public class HelloController {
 
     @FXML
     void customization(ActionEvent event) throws IOException{
-        PApplet.main("Happier");
+        PApplet.main("Sleepy");
     }
 
     @FXML
@@ -89,6 +93,7 @@ public class HelloController {
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
