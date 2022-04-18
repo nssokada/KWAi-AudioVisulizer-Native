@@ -18,7 +18,7 @@ public class Main extends Application{
             root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            //      primaryStage.setResizable(false);   @team do we want to implement this
+            primaryStage.setResizable(false);
             primaryStage.show();
         }
         catch (IOException e) {
