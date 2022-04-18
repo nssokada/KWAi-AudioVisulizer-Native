@@ -4,6 +4,9 @@ import processing.data.*;
 import processing.event.*;
 import processing.opengl.*;
 
+import processing.awt.PSurfaceAWT;
+import java.awt.MouseInfo;
+import java.awt.Point;
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -20,7 +23,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.IOException;
 
-public class Relax extends PApplet {
+public class Relaxed extends PApplet {
+
+
+
 
 
 
@@ -31,10 +37,9 @@ public class Relax extends PApplet {
 
 // Configuration variables
 // ------------------------
-int canvasWidth = 2048;
+int canvasWidth = 1080;
 int canvasHeight = 1080;
 String audioFileName = "ThetaAlpha.mp3"; // Audio file in data folder
-
 
 //Global variables: 
 float fps = 200; 
@@ -56,16 +61,20 @@ float[] extendingSphereLinesRadius;
 PVector center;
 float var1;
 float var2;
+boolean isInFullscreen;
+boolean dragging;
+int dragX, dragY;
+Button hide, full, close;
+PSurfaceAWT awtSurface;
+PSurfaceAWT.SmoothCanvas smoothCanvas;
 
 //Main Setup:
  public void settings() {
-  size(1080, 1080);
+  size(canvasWidth, canvasHeight);
   smooth(8);
 }
 
- public void setup() {
-  //noCursor();
-  //surface.setResizable(true);
+ public void setup(){
   background(0);
   frameRate(30);
   surface.setResizable(true);
@@ -83,12 +92,23 @@ float var2;
   
   //AUDIO PROCESSING DONE HERE.
   minim = new Minim(this);
-  player = minim.loadFile(audioFileName, 2048);
+  player = minim.loadFile("ThetaAlpha.mp3");    
   player.loop();
   fft = new FFT( player.bufferSize(), player.sampleRate() );
-  fft.linAverages(bands);
+  fft.linAverages(256);
+  
+  awtSurface = (PSurfaceAWT)surface;
+  smoothCanvas = (PSurfaceAWT.SmoothCanvas)awtSurface.getNative();
+  smoothCanvas.getFrame().removeNotify();
+  smoothCanvas.getFrame().setUndecorated(true);// Hide the window border
+  smoothCanvas.getFrame().setLocation(100, 100);// Move the window
+  smoothCanvas.getFrame().addNotify();
+  
+  // Menu Buttons
+  hide = new Button(width - 115, -5, 40, 25, color(0xFFFFFF66), 5);
+  full = new Button(width - 80, -5, 40, 25, color(0xFF99FF66), 5);
+  close = new Button(width - 45, -5, 50, 25, color(200, 0, 0), 5);
 }
-
 
  public void drawStatic(){
   if(initialStatic){
@@ -124,7 +144,7 @@ float var2;
     stroke(0xFFFFFFFF, 200);//cool blue
     line(x, y, xDestination, yDestination);
   }
-  }   
+  }
 }
 
 //The waves in the back:
@@ -332,13 +352,89 @@ float var2;
   noStroke();
   rect(0, 0, width, height);
   noFill();
- 
+  dashboard();
   drawAll(sum);
+}
+
+ public void mousePressed(){
+  if(hide.isMouseOver()){
+    smoothCanvas.getFrame().toBack();// Hide window
+  }
+  if(full.isMouseOver()){
+    isInFullscreen = !isInFullscreen;
+    if(isInFullscreen){
+      smoothCanvas.getFrame().setLocation(0, 0);
+      smoothCanvas.getFrame().setSize(displayWidth, displayHeight);
+    }else{
+      smoothCanvas.getFrame().setLocation(100, 100);
+      smoothCanvas.getFrame().setSize(1080, 1080);
+    }
+  }
+  if(close.isMouseOver()){
+    exit();// Close window
+  }
+  // Drag window
+  if(mouseY < 20){
+    dragging = true;
+    dragX = mouseX;
+    dragY = mouseY;
+  }
+}
+
+ public void mouseDragged(){
+  if(dragging){
+    // Get mouse position and move the window
+    Point mouse = MouseInfo.getPointerInfo().getLocation();
+    smoothCanvas.getFrame().setLocation(mouse.x - dragX, mouse.y - dragY);
+  }
+}
+
+ public void mouseReleased(){
+  dragging = false;
+}
+
+ public void dashboard(){
+  background(0);
+  // Draw Menu Bar
+  fill(0);
+  rect(0, 0, width, 20);
+  hide.display();
+  full.display();
+  close.display();
+}
+
+// Menu Button Class
+class Button{
+  int xpos, ypos;
+  int sizeX, sizeY;
+  int buttonColor;
+  int borderRadius;
+  
+  Button(int x, int y, int sx, int sy, int c, int br){
+    xpos = x;
+    ypos = y;
+    sizeX = sx;
+    sizeY = sy;
+    buttonColor = c;
+    borderRadius = br;
+  }
+  
+   public void display(){
+    fill(buttonColor);
+    rect(xpos, ypos, sizeX, sizeY, borderRadius);
+  }
+  
+   public boolean isMouseOver(){
+    if(mouseX > xpos && mouseX < xpos + sizeX && mouseY > ypos && mouseY < sizeY){
+      return true;
+    }
+    return false;
+  }
 }
 
 
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "Relax" };
+    String[] appletArgs = new String[] { "Relaxed" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {
