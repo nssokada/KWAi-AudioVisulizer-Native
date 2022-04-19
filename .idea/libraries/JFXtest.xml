@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JFXtest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JFXtest/out/artifacts/JFXtest_jar/JFXtest.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

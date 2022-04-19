@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/controlP5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/my_audio_visualizer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/HappyMatt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Relax.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/mysql-socket-factory-connector-j-8-1.4.4-jar-with-dependencies.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/minim.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/gluegen-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/happyMat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Happier.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/mp3spi1.9.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Sleepy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/jogl-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/jl1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/tritonus_aos.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Relaxed.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/tritonus_share.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/mysql-connector-java-8.0.28.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/sound.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Sleep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/creativity.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Calmer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/jsminim.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/libs/Calm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
