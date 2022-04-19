@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ListenCotroller">
+   <children>
+      <AnchorPane layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: #191932#191932;">
+         <children>
+            <Button layoutX="39.0" layoutY="176.0" mnemonicParsing="false" onAction="#relax" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #1878f3 #1878f3;" text="Relaxed " textFill="WHITE">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="52.0" layoutY="107.0" prefHeight="16.0" prefWidth="276.0" text="Based on your responses we recommend the following moods" textAlignment="CENTER" textFill="#5a5a89" wrapText="true">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button layoutX="155.0" layoutY="176.0" mnemonicParsing="false" onAction="#happy" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #ff9500#ff9500;" text="Happy" textFill="WHITE">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Button>
+            <Button layoutX="275.0" layoutY="176.0" mnemonicParsing="false" onAction="#creativity" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #ff0000;" text="Creative" textFill="WHITE">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Button>
+            <Button layoutX="97.0" layoutY="259.0" mnemonicParsing="false" onAction="#calm" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #00b07b#00b07b;" text="Calm" textFill="WHITE">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Button>
+            <Button layoutX="216.0" layoutY="259.0" mnemonicParsing="false" onAction="#sleep" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #d000ff;" text="Sleepy" textFill="WHITE">
+               <font>
+                  <Font size="7.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="76.0" fitWidth="85.0" layoutX="148.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@kwai_icons/user_emotion_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <MenuBar prefHeight="28.0" prefWidth="901.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);">
+         <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kwai_icons/kwai_logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#home" text="home" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kwai_icons/profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#userDashboard" text="dashboard" />
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="login" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
