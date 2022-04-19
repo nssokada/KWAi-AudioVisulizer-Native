@@ -24,11 +24,6 @@ public class Calm extends PApplet {
 
 
 
-
-
-
-
-
 //Global variables: 
 Minim minim;
 AudioPlayer audio;
@@ -119,7 +114,7 @@ float var2;
 }
 
 
-  public void settings() { size(1000, 1000, P3D);
+  public void settings() { size(1000, 1000);
 smooth(8); }
 
   static public void main(String[] passedArgs) {
