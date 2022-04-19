@@ -61,17 +61,17 @@ public class ListenCotroller {
 
     @FXML
     void calm(ActionEvent event) throws IOException {
-        PApplet.main("Calmer");
+        PApplet.main("Calm");
     }
 
     @FXML
     void sleep(ActionEvent event) throws IOException {
-        PApplet.main("Sleepy");
+        PApplet.main("Sleep");
     }
 
     @FXML
     void relax(ActionEvent event) throws IOException {
-        PApplet.main("Relaxed");
+        PApplet.main("Relax");
     }
 
     @FXML

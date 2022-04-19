@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="JFXtest1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/JFXtest/lucida-calligraphy.zip!/" />
       <root url="jar://$PROJECT_DIR$/JFXtest/segoe-print.zip!/" />
+      <root url="jar://$PROJECT_DIR$/JFXtest/lucida-calligraphy.zip!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
