@@ -197,7 +197,7 @@ float var2;
   public void settings() { size(1000, 1000); }
 
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "Sleep" };
+    String[] appletArgs = new String[] { "sample.Sleep" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {
