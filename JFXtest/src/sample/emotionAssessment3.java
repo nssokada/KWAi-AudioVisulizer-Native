@@ -156,12 +156,12 @@ public class emotionAssessment3 implements Initializable{
 
     @FXML
     void calm(ActionEvent event) throws IOException {
-        PApplet.main("Calmer");
+        PApplet.main("Calm");
     }
 
     @FXML
     void sleep(ActionEvent event) throws IOException {
-        PApplet.main("sleep");
+        PApplet.main("Sleep");
     }
 
     @FXML
