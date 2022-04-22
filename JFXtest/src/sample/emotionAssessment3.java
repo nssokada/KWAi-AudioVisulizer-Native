@@ -191,7 +191,7 @@ public class emotionAssessment3 implements Initializable{
 
     @FXML
     void calm(ActionEvent event) throws IOException {
-        PApplet.main("Calmer");        // code for JDBC insert
+        PApplet.main("Calm");        // code for JDBC insert
         try {
             // Database Connection stuff
             DatabaseConnection connection = new DatabaseConnection();
@@ -212,7 +212,7 @@ public class emotionAssessment3 implements Initializable{
 
     @FXML
     void sleep(ActionEvent event) throws IOException {
-        PApplet.main("sleep");
+        PApplet.main("Sleep");
         // code for JDBC insert
         try {
             // Database Connection stuff
@@ -233,7 +233,7 @@ public class emotionAssessment3 implements Initializable{
 
     @FXML
     void relax(ActionEvent event) throws IOException {
-        PApplet.main("Relaxed");
+        PApplet.main("Relax");
         // code for JDBC insert
         try {
             // Database Connection stuff
@@ -254,7 +254,7 @@ public class emotionAssessment3 implements Initializable{
 
     @FXML
     void happy(ActionEvent event) throws IOException {
-        PApplet.main("Happier");
+        PApplet.main("HappyMatt");
         // code for JDBC insert
         try {
             // Database Connection stuff
