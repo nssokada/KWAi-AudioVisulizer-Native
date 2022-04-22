@@ -17,10 +17,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
-
 public class UserDashboardController implements Initializable{
+
+    KWAiUser user = loginController.user;
+    int userID = user.getUID();
 
     private Stage stage;
     private Scene scene;
@@ -39,7 +44,6 @@ public class UserDashboardController implements Initializable{
     @FXML
     private LineChart lineChart;
 
-
     @FXML
     private Parent rooter;
     @FXML
@@ -51,42 +55,103 @@ public class UserDashboardController implements Initializable{
     @FXML
     private PasswordField passwordPasswordField;
 
-
-    @FXML
-    void home(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-        stage = (Stage)rooter.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    void userDashboard(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
-        stage = (Stage)rooter.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
-    @FXML
-    void login(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
-        stage = (Stage)rooter.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)  {
 
-        aro.setText("150");
-        val.setText("300");
-        avg.setText("215");
-        viz.setText("Happy");
+        int arousal = 10;
+        int valence = 10;
+
+        // TODO: Make this query dynamic to the user
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastArousal = "SELECT aScore FROM Takes WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult1 = statement.executeQuery(lastArousal);
+
+                while(queryResult1.next()) {
+                    if (queryResult1.getInt(1) == 1) {
+                        arousal = queryResult1.getInt("aScore");
+                    } else {
+                        aro.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastValence = "SELECT vScore FROM Takes WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastValence);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        valence = queryResult2.getInt("vScore");
+                    } else {
+                        val.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if query was successful, these should set to the arousal and valence from the latest emotional assessment that the user completed
+        aro.setText(" " + arousal + " ");
+        val.setText(" " + valence + " ");
+
+        int average = (arousal + valence)/ 2;
+        avg.setText("" + average + "");
+
+
+        String lastVisual = "";
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastViz = "SELECT vID FROM Creates WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastViz);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        lastVisual = queryResult2.getString("vID");
+                    } else {
+                        viz.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        viz.setText(lastVisual);
+
+
         showLineCharts();
 
 
@@ -113,4 +178,33 @@ public class UserDashboardController implements Initializable{
 
         lineChart.getData().add(dataSeries1);
     }
+
+    @FXML
+    void home(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void userDashboard(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void login(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 }

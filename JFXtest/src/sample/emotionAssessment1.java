@@ -8,8 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.KWAiUser;
-import sample.loginController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,10 +30,12 @@ public class emotionAssessment1 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        user.setValence(0);
+        user.setArousal(0);
     }
 
     @FXML
-    void home(ActionEvent event) throws IOException{
+    void home(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);

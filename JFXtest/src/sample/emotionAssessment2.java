@@ -8,9 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.DatabaseConnection;
-import sample.KWAiUser;
-import sample.loginController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,8 +26,12 @@ public class emotionAssessment2 implements Initializable {
     @FXML
     private Parent rooter;
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
+
     @FXML
-    void home(ActionEvent event) throws IOException{
+    void home(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
@@ -54,10 +55,6 @@ public class emotionAssessment2 implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
     }
 
     @FXML
@@ -127,6 +124,8 @@ public class emotionAssessment2 implements Initializable {
         user.addValence(-5);
         user.addArousal(5);
     }
+
+
 
     @FXML
     void submitForm(ActionEvent event) throws IOException {

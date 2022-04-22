@@ -8,8 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
-import processing.core.*;
+import processing.core.PApplet;
 
 import java.io.IOException;
 
@@ -61,8 +60,6 @@ public class HelloController {
         stage.show();
     }
 
-
-
     @FXML
     void showNextScreen(ActionEvent event) throws IOException {
         try {
@@ -79,13 +76,13 @@ public class HelloController {
 
     @FXML
     void customization(ActionEvent event) throws IOException{
-        PApplet.main("sleep");
+        PApplet.main("my_audio_visualizer");
     }
 
     @FXML
     void listen(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("Listen.fxml"));
-        stage = (Stage)rooter.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("listen.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

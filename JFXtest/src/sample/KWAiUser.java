@@ -1,7 +1,5 @@
 package sample;
 
-import sample.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -15,7 +13,7 @@ public class KWAiUser {
 
     public void setName(String name) {
         this.name = name;
-        sample.DatabaseConnection connection = new DatabaseConnection();
+        DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnection();
         String getUID = "SELECT uID FROM User WHERE username = '" + name + "'";
         try {
