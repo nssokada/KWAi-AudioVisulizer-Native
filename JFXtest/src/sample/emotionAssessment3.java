@@ -19,9 +19,13 @@ import processing.core.PApplet;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 
 public class emotionAssessment3 implements Initializable{
+
+    KWAiUser user = loginController.user;
 
     private Stage stage;
     private Scene scene;
@@ -34,13 +38,37 @@ public class emotionAssessment3 implements Initializable{
     @FXML
     private Button calm1;
     @FXML
+    private Button calm2;
+    @FXML
+    private Button calm3;
+
+    @FXML
     private Button happy1;
+    @FXML
+    private Button happy2;
+    @FXML
+    private Button happy3;
+
     @FXML
     private Button creative1;
     @FXML
+    private Button creative2;
+    @FXML
+    private Button creative3;
+
+    @FXML
     private Button relax1;
     @FXML
+    private Button relax2;
+    @FXML
+    private Button relax3;
+
+    @FXML
     private Button sleep1;
+    @FXML
+    private Button sleep2;
+    @FXML
+    private Button sleep3;
 
     @FXML
     private Parent rooter;
@@ -48,15 +76,12 @@ public class emotionAssessment3 implements Initializable{
     private int valence;
     private int arousal;
 
-    KWAiUser user = loginController.user;
-
     @FXML
-    void home(ActionEvent event) throws IOException{
+    void home(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
     }
 
@@ -66,7 +91,6 @@ public class emotionAssessment3 implements Initializable{
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
     }
 
@@ -76,7 +100,6 @@ public class emotionAssessment3 implements Initializable{
         stage = (Stage)rooter.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
     }
 
@@ -85,6 +108,7 @@ public class emotionAssessment3 implements Initializable{
 
         valence = user.getValence();
         arousal = user.getArousal();
+
 
         // set the conditions for valence
         if (valence > 17) {
@@ -149,30 +173,113 @@ public class emotionAssessment3 implements Initializable{
 
     }
 
+
     @FXML
     void creativity(ActionEvent event) throws IOException {
         PApplet.main("creativity");
+        // code for JDBC insert
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Creates VALUES(?, creative,Now())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void calm(ActionEvent event) throws IOException {
-        PApplet.main("Calm");
+        PApplet.main("Calmer");        // code for JDBC insert
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Creates VALUES(?, calm,Now())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @FXML
     void sleep(ActionEvent event) throws IOException {
-        PApplet.main("Sleep");
+        PApplet.main("sleep");
+        // code for JDBC insert
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Creates VALUES(?, sleep,Now())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void relax(ActionEvent event) throws IOException {
-        PApplet.main("Relax");
+        PApplet.main("Relaxed");
+        // code for JDBC insert
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Creates VALUES(?, relax,Now())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void happy(ActionEvent event) throws IOException {
-        PApplet.main("HappyMatt");
+        PApplet.main("Happier");
+        // code for JDBC insert
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Creates VALUES(?, happy,Now())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
 
 
 }

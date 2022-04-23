@@ -66,7 +66,7 @@ public class ListenCotroller {
 
     @FXML
     void sleep(ActionEvent event) throws IOException {
-        PApplet.main("sample.Sleep");
+        PApplet.main("Sleep");
     }
 
     @FXML

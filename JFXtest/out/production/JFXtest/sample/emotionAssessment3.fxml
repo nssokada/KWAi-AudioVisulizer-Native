@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.emotionAssessment3">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.emotionAssessment3">
    <children>
       <AnchorPane fx:id="pane1" layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: rgb(25,25,50,1);">
          <children>
@@ -34,27 +29,27 @@
                   <Image url="@kwai_icons/button_bg.png" />
                </image>
             </ImageView>
-            <Button fx:id="happy1" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #ff9500#ff9500 #ff9500#ff9500;" text="happy">
+            <Button fx:id="happy1" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" onAction="#happy" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #ff9500#ff9500 #ff9500#ff9500;" text="happy">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button fx:id="creative1" layoutX="150.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #ff0000 #ff0000;" text="creative">
+            <Button fx:id="creative1" layoutX="150.0" layoutY="225.0" mnemonicParsing="false" onAction="#creativity" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #ff0000 #ff0000;" text="creative">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button fx:id="calm1" layoutX="245.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #00b07b#00b07b #00b07b#00b07b;" text="calm">
+            <Button fx:id="calm1" layoutX="245.0" layoutY="225.0" mnemonicParsing="false" onAction="#calm" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #00b07b#00b07b #00b07b#00b07b;" text="calm">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button fx:id="relax1" layoutX="95.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #1878f3 #1878f3 #1878f3 #1878f3;" text="relax">
+            <Button fx:id="relax1" layoutX="95.0" layoutY="272.0" mnemonicParsing="false" onAction="#relax" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #1878f3 #1878f3 #1878f3 #1878f3;" text="relax">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button fx:id="sleep1" layoutX="203.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #d000ff #d000ff;" text="sleep">
+            <Button fx:id="sleep1" layoutX="203.0" layoutY="272.0" mnemonicParsing="false" onAction="#sleep" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #d000ff #d000ff;" text="sleep">
                <font>
                   <Font size="11.0" />
                </font>

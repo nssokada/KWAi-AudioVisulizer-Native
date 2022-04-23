@@ -84,7 +84,7 @@ public class HelloController {
 
     @FXML
     void customization(ActionEvent event) throws IOException{
-        PApplet.main("Sleepy");
+        PApplet.main("control_panel");
     }
 
     @FXML

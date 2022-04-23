@@ -32,6 +32,9 @@ public class emotionAssessment1 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        user.setValence(0);
+        user.setArousal(0);
     }
 
     @FXML

@@ -1,58 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserDashboardController">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserDashboardController">
    <children>
       <ImageView fitHeight="560.0" fitWidth="901.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@kwai_icons/user_dashboard_BG.png" />
          </image>
       </ImageView>
-      <Label fx:id="aro" alignment="CENTER" layoutX="292.0" layoutY="263.0" prefHeight="29.0" prefWidth="84.0" textFill="WHITE">
+      <Line endX="394.5" endY="238.5" layoutX="-2.0" layoutY="-4.0" startX="394.5" startY="213.0" stroke="WHITE" />
+      <Button layoutX="333.0" layoutY="205.0" mnemonicParsing="false" onAction="#latest" style="-fx-background-color: transparent;" text="Latest " textFill="#5a5a89" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="aro" alignment="CENTER" layoutX="300.0" layoutY="300.0" prefHeight="29.0" prefWidth="71.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="286.0" layoutY="225.0" prefHeight="23.0" prefWidth="86.0" text="Arousal" textFill="#5a5a89">
+      <Label alignment="CENTER" layoutX="313.0" layoutY="263.0" prefHeight="23.0" prefWidth="86.0" text="Arousal" textFill="#5a5a89">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="564.0" layoutY="225.0" prefHeight="23.0" prefWidth="86.0" text="Valence" textFill="#5a5a89">
+      <Label alignment="CENTER" layoutX="538.0" layoutY="263.0" prefHeight="23.0" prefWidth="86.0" text="Valence" textFill="#5a5a89">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="410.0" layoutY="225.0" prefHeight="23.0" prefWidth="122.0" text="Average Mood" textFill="#5a5a89">
+      <Label alignment="CENTER" layoutX="405.0" layoutY="263.0" prefHeight="23.0" prefWidth="122.0" text="Average Mood" textFill="#5a5a89">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="val" alignment="CENTER" layoutX="565.0" layoutY="262.0" prefHeight="29.0" prefWidth="84.0" textFill="WHITE">
+      <Label fx:id="val" alignment="CENTER" layoutX="564.0" layoutY="300.0" prefHeight="29.0" prefWidth="71.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="avg" alignment="CENTER" layoutX="431.0" layoutY="263.0" prefHeight="29.0" prefWidth="84.0" textFill="WHITE">
+      <Label fx:id="avg" alignment="CENTER" layoutX="430.0" layoutY="301.0" prefHeight="29.0" prefWidth="71.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="357.0" layoutY="335.0" prefHeight="27.0" prefWidth="268.0" text="Most Recent Visualizations " textFill="#5a5a89">
+      <Label alignment="CENTER" layoutX="329.0" layoutY="341.0" prefHeight="27.0" prefWidth="268.0" text="Most Recent Visualizations " textFill="#5a5a89">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="viz" alignment="CENTER" layoutX="435.0" layoutY="380.0" prefHeight="17.0" prefWidth="58.0" textFill="WHITE">
+      <Label fx:id="viz" alignment="CENTER" layoutX="437.0" layoutY="381.0" prefHeight="17.0" prefWidth="58.0" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <MenuBar layoutX="-3.0" layoutY="-1.0" prefHeight="30.0" prefWidth="611.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <MenuBar layoutY="-1.0" prefHeight="30.0" prefWidth="611.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <menus>
             <Menu mnemonicParsing="false">
                <graphic>
@@ -81,5 +93,23 @@
             </Menu>
          </menus>
       </MenuBar>
+      <Button layoutX="457.0" layoutY="205.0" mnemonicParsing="false" onAction="#oneMonth" style="-fx-background-color: transparent;" text="1 Month" textFill="#5a5a89" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="392.0" layoutY="205.0" mnemonicParsing="false" onAction="#oneWeek" style="-fx-background-color: transparent;" text="1 Week" textFill="#5a5a89" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="528.0" layoutY="205.0" mnemonicParsing="false" onAction="#threeMonth" style="-fx-background-color: transparent;" text="3 Month" textFill="#5a5a89" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Line endX="328.0" endY="229.0" layoutX="8.0" layoutY="6.0" startX="587.0" startY="229.0" stroke="WHITE" />
+      <Line endX="394.5" endY="238.5" layoutX="62.0" layoutY="-4.0" startX="394.5" startY="213.0" stroke="WHITE" />
+      <Line endX="394.5" endY="238.5" layoutX="132.0" layoutY="-4.0" startX="394.5" startY="213.0" stroke="WHITE" />
    </children>
 </AnchorPane>
